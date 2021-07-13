@@ -1,0 +1,6 @@
+*/__pycache__
+*.pth
+.vscode/*
+test.log
+dist_train_mmseg.py
+datasets/pascal_voc12.py
