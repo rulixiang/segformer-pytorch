@@ -112,8 +112,8 @@ def random_crop(image, label, crop_size, mean_rgb=[0,0,0], ignore_index=255):
     pad_image[:,:,1] = mean_rgb[1]
     pad_image[:,:,2] = mean_rgb[2]
     
-    H_pad = int(np.floor(H-h))
-    W_pad = int(np.floor(W-w))
+    H_pad = int(np.random.randint(H-h+1))
+    W_pad = int(np.random.randint(W-w+1))
     
     pad_image[H_pad:(H_pad+h), W_pad:(W_pad+w), :] = image
     pad_label[H_pad:(H_pad+h), W_pad:(W_pad+w)] = label
