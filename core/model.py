@@ -39,9 +39,9 @@ class WeTr(nn.Module):
         
         for name, param in list(self.encoder.named_parameters()):
             if "norm" in name:
-                param_groups[0].append(param)
-            else:
                 param_groups[1].append(param)
+            else:
+                param_groups[0].append(param)
 
         for param in list(self.decoder.parameters()):
 
