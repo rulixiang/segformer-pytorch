@@ -58,12 +58,3 @@ class WeTr(nn.Module):
         cls = self.classifier(_x4)
 
         return self.decoder(_x)
-    
-
-if __name__=="__main__":
-
-    pretrained_weights = torch.load('pretrained/mit_b1.pth')
-    wetr = WeTr('mit_b1', num_classes=20, embedding_dim=256, pretrained=True)
-    wetr._param_groups()
-    dummy_input = torch.rand(2,3,512,512)
-    wetr(dummy_input)
